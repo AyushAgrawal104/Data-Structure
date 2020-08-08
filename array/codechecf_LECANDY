@@ -1,0 +1,45 @@
+/**
+https://www.codechef.com/submit/LECANDY 
+
+Code Checf Array basic question for adding all element in array.
+Also help to understand all basics for taking input in array.
+**/
+
+
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner in = new Scanner(System.in);
+		
+		int t = Integer.parseInt(in.next());
+	
+		while(t > 0){
+		    int size = Integer.parseInt(in.next());
+		    int _count = Integer.parseInt(in.next());
+		    in.nextLine();
+		    
+		    String _candy = in.nextLine();
+		   
+		    String[] candy = _candy.split(" ");
+		    int count = 0;
+		    for(int i = 0; i < size; i++){
+		       
+		        count = count + Integer.parseInt(candy[i]);
+		    }
+		    if(count > _count)
+		        System.out.println("No");
+		    else{
+		        System.out.println("Yes");
+		    }
+		     t--;
+		}
+	}
+}

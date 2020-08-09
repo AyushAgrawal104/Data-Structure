@@ -1,0 +1,44 @@
+/**
+This is a good question in which you have to thing in opposite direction and not in given direction.
+if we are going to increase salary then we have to check max all time.
+loop to increase all by one.
+
+
+Question : https://www.codechef.com/problems/SALARY
+**/
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	  Scanner in = new Scanner(System.in);
+	  
+	  int t  = Integer.parseInt(in.next());
+	  
+	  while( t > 0){
+	      in.nextLine();
+	      int s = Integer.parseInt(in.nextLine());
+	       int[] salary = new int[s];
+	       int minimum = Integer.MAX_VALUE;
+	       int operation = 0;
+	      for(int i = 0; i < s ; i++){
+	          salary[i] = Integer.parseInt(in.next());
+	          if(salary[i] < minimum){
+	              minimum = salary[i];
+	          }
+	      }
+	      // Find minimum salary and its position
+	      for(int i = 0; i < s ; i++){
+	          operation = operation + (salary[i] - minimum);
+	      }
+	      System.out.println(operation);
+	      t--;
+	  }
+	}
+}

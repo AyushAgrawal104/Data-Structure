@@ -1,0 +1,52 @@
+/**
+this is simple example for hashset
+
+https://www.codechef.com/problems/FRGTNLNG
+**/
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner in = new Scanner(System.in);
+	
+	    int t = Integer.parseInt(in.next());
+	    
+	    while(t > 0){
+	 
+	        in.nextLine();
+	        int chracters = Integer.parseInt(in.next());
+	        int line = Integer.parseInt(in.next());
+	        in.nextLine();
+	        
+	        String words = in.nextLine();
+	        HashSet set = new HashSet();
+	        for(int i = 0 ; i < line ; i++){
+	            int w_ = Integer.parseInt(in.next());
+	            while(w_ > 0){
+	                set.add(in.next());
+	                w_ --;
+	            }
+	          
+	        }
+	        String[] arrya = words.split(" ");
+	        for(String s : arrya){
+	            if(set.contains(s)){
+	                System.out.print("YES ");
+	            }else{
+	                System.out.print("NO ");
+	            }
+	        }
+	         t--;
+	    System.out.println();
+	    }
+	   
+	}
+}
+

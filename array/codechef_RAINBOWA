@@ -1,0 +1,68 @@
+/**
+https://www.codechef.com/problems/RAINBOWA
+
+simple but not clean 
+**/
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner in = new Scanner(System.in);
+		
+		int t = Integer.parseInt(in.next());
+	    int e1 ;
+		boolean flag;
+		
+		while(t > 0){
+		    
+		    in.nextLine(); 
+		    int n = Integer.parseInt(in.next());
+		    Stack<Integer> s = new Stack();
+		    e1 = 0;
+		    flag = false; 
+		    boolean out_flag = true;
+		    for(int i = 0; i < n ; i++){
+		        int e = Integer.parseInt(in.next());
+		        if(!flag || e == 7){
+		            if((e1 == e || e1 + 1 == e) && e <= 7){
+		                if(e != 7){
+		                     s.push(e);
+		                     e1 = e;
+		                }else{
+		                    flag = true;
+		                }
+		            }else{
+		                out_flag = false;
+		                break;
+		            }
+		            
+		        }else{
+		            if(!s.isEmpty()){
+		                if(e != s.pop()){
+		                    out_flag =false;
+		                    break;
+		                }
+		            }else{
+		                out_flag = false;
+		                break;
+		            }
+		        }
+		    }
+		      if(s.isEmpty() && out_flag){
+		         System.out.println("yes");
+		      }else{
+		         System.out.println("no");
+		      }
+		      t--;
+		}
+	
+	}
+}
+

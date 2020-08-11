@@ -1,0 +1,41 @@
+/**
+This is a very good example for BigInteger operation and logic is simple.
+When you have to deal with long long type in java then binInteger.
+
+https://www.codechef.com/problems/CSUB
+**/
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.math.BigInteger;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner in = new Scanner(System.in);
+		
+        int t = Integer.parseInt(in.next());
+        
+        while(t > 0){
+            in.nextLine();
+            BigInteger ones_count = new BigInteger("0");
+            int n = Integer.parseInt(in.next());
+            in.nextLine();
+            String e = in.next();
+            for(char e_ : e.toCharArray()){
+                if(e_ == '1'){
+                    ones_count = ones_count.add(BigInteger.valueOf(1));
+                }
+            }
+            BigInteger multiply = (ones_count.add(BigInteger.valueOf(1))).multiply(ones_count);
+            BigInteger div = multiply.divide(BigInteger.valueOf(2));
+            System.out.println(div);
+            t--;
+        }
+	}
+}
+
